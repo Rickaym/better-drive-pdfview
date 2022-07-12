@@ -4,6 +4,17 @@ increased comment space & some other features.
 
 It takes at least 6 seconds for the injection to finish/occur (should be around the same time the PDF pages are loaded).
 
+## How-To-Install
+
+1. Clone or [Download](https://github.com/Rickaym/Better-Drive-PDFView/archive/refs/heads/master.zip) this repository & unzip it somewhere
+2. Navigate to [chrome://extensions/](chrome://extensions/) in your Chrome Browser
+3. Enable Developer Mode<br>
+![](https://raw.githubusercontent.com/Rickaym/Better-Drive-PDFView/master/assets/guide.png)
+
+4. Press `Load unpacked`
+5. When a folder selector window appears, select the `dist` folder from the unzipped files
+6. Refresh the webpages & you're done!
+
 ## Features
 
 1. "Goto" Feature to auto-scroll to selected pages<br>
@@ -22,17 +33,6 @@ and informative comments better! And additionally, packs in more functionality
 into the webpage for practical reading purposes.
 
 Initially made for personal/close friend usage.
-
-## How-To-Install
-
-1. Clone or [Download](https://github.com/Rickaym/Better-Drive-PDFView/archive/refs/heads/master.zip) this repository & unzip it somewhere
-2. Navigate to [chrome://extensions/](chrome://extensions/) in your Chrome Browser
-3. Enable Developer Mode<br>
-![](https://raw.githubusercontent.com/Rickaym/Better-Drive-PDFView/master/assets/guide.png)
-
-4. Press `Load unpacked`
-5. When a folder selector window appears, select the `dist` folder from the unzipped files
-6. Refresh the webpages & you're done!
 
 ## How-To-Build-Yourself
 
