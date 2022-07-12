@@ -1,10 +1,12 @@
 const moreOptionsClassName =
   "ndfHFb-c4YZDc-z5C9Gb-LgbsSe ndfHFb-c4YZDc-to915-LgbsSe VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe";
 const hideCommentsButtonClassName = "ndfHFb-c4YZDc-j7LFlb";
-
+const contextMenuClassName =
+  "ndfHFb-c4YZDc-mg9Pef ndfHFb-c4YZDc-mg9Pef-BvBYQ ndfHFb-c4YZDc-i5oIFb";
 const pageControlBoxClassName = "ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb";
 const pageNumBoxClassName = "ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb";
 const pageNumBoxTextClassName = "ndfHFb-c4YZDc-DARUcf-NnAfwf-j4LONd";
+const contextMenuItemClassName = "ndfHFb-c4YZDc-j7LFlb";
 
 const pdfContainerClassName =
   "ndfHFb-c4YZDc-cYSp0e-Oz6c3e ndfHFb-c4YZDc-cYSp0e-DARUcf-gSKZZ ndfHFb-c4YZDc-neVct-RCfa3e";
@@ -29,6 +31,44 @@ function getElemByClassName(className: string) {
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function showTextDefinition(text: string) {
+  console.log(`Getting definition for ${text}.`);
+  const endpoint = `https://api.dictionaryapi.dev/api/v2/entries/en/${text}`;
+  fetch(endpoint, {
+    method: "GET",
+  }).then(async (resp) => {
+    if (resp.status != 200) {
+      return console.error(
+        `Dictionary request for "${text}" at ${endpoint} returned ${resp.status} code with "${resp.text}".`
+      );
+    }
+    const ret = await resp.json();
+    const pack = ret[0];
+    var phonetic = "";
+    pack.phonetics.forEach((pht: any) => {
+      if (pht.text) {
+        phonetic = pht.text;
+      }
+    });
+    var meanings = "";
+    pack.meanings.forEach((mean: any) => {
+      const definitions = mean.definitions
+        .map(
+          (defined: any) =>
+            `\t ${defined.definition}${
+              (defined.example || "").trim().length !== 0
+                ? "\n\t e.g. " + defined.example
+                : ""
+            }`
+        )
+        .join("\n\n");
+
+      meanings += `${mean.partOfSpeech} \n${definitions}\n\n`;
+    });
+    alert(`DEFINITION || ${pack.word} || ${phonetic}\n${meanings}`.trim());
+  });
 }
 
 interface TogglableOptions {
@@ -180,6 +220,35 @@ sleep(6000).then(() => {
     },
     { toggleName: "Light Mode" }
   );
+  addTogglable(
+    "Dictionary",
+    "Get a word definition",
+    upperDockButtonClassName,
+    upperDockClassName,
+    async (ev) => {
+      const input = prompt(
+        "Type in the word you'd like to define! (default value copied from clibpoard)",
+        (await navigator.clipboard.readText()).replace(/[^A-Za-z]/g, "")
+      );
+      if (!input) {
+        return;
+      }
+      showTextDefinition(input);
+    }
+  );
+  const copyButton = document.getElementById(":26n");
+  if (copyButton) {
+    copyButton.addEventListener("click", async (ev) => {
+      const input = (await navigator.clipboard.readText()).replace(
+        /[^A-Za-z]/g,
+        ""
+      );
+      if (confirm(`Do you want to Google "${input}"? (Press Enter/Escape)`)) {
+        window.open(`https://www.google.com/search?q=${input}`);
+      }
+    });
+    copyButton.textContent = "Copy & Google";
+  }
 
   // Observer "Page Number" mutation and cache into local storage for
   // later restoration

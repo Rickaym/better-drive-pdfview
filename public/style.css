@@ -1,5 +1,7 @@
 body {
     background-image: url(https://cdn.mos.cms.futurecdn.net/C9JVYkqCELkdERaqd9gFbj-970-80.jpg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .better-drive-pdfview-hover-button {
