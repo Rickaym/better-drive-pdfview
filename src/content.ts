@@ -236,19 +236,19 @@ sleep(6000).then(() => {
       showTextDefinition(input);
     }
   );
-  const copyButton = document.getElementById(":26n");
-  if (copyButton) {
-    copyButton.addEventListener("click", async (ev) => {
-      const input = (await navigator.clipboard.readText()).replace(
-        /[^A-Za-z]/g,
-        ""
-      );
-      if (confirm(`Do you want to Google "${input}"? (Press Enter/Escape)`)) {
-        window.open(`https://www.google.com/search?q=${input}`);
-      }
-    });
-    copyButton.textContent = "Copy & Google";
-  }
+  // const copyButton = document.getElementById(":26n");
+  // if (copyButton) {
+  //   copyButton.addEventListener("click", async (ev) => {
+  //     const input = (await navigator.clipboard.readText()).replace(
+  //       /[^A-Za-z]/g,
+  //       ""
+  //     );
+  //     if (confirm(`Do you want to Google "${input}"? (Press Enter/Escape)`)) {
+  //       window.open(`https://www.google.com/search?q=${input}`);
+  //     }
+  //   });
+  //   copyButton.textContent = "Copy & Google";
+  // }
 
   // Observer "Page Number" mutation and cache into local storage for
   // later restoration
