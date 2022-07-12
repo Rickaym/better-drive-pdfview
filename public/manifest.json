@@ -9,14 +9,23 @@
       "scripting"
    ],
    "background": {
-     "service_worker": "background.js"
+      "service_worker": "background.js"
+   },
+   "icons": {
+      "16": "uroboros16.png",
+      "48": "uroboros48.png",
+      "128": "uroboros128.png"
    },
    "content_scripts": [
       {
-         "js": ["content.js"],
-         "css": ["style.css"],
+         "js": [
+            "content.js"
+         ],
+         "css": [
+            "style.css"
+         ],
          "matches": [
-            "https://drive.google.com/file/d/*"
+            "https://drive.google.com/file/d/*/view"
          ]
       }
    ]
