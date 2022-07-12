@@ -9,5 +9,3 @@ chrome.runtime.onMessage.addListener((request, sender, _) => {
   chrome.storage.sync.set(data);
   return true;
 });
-
-
