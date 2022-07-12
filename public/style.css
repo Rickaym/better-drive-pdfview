@@ -1,0 +1,11 @@
+body {
+    background-image: url(https://cdn.mos.cms.futurecdn.net/C9JVYkqCELkdERaqd9gFbj-970-80.jpg.webp);
+}
+
+.better-drive-pdfview-hover-button {
+    margin-right: 5px;
+}
+
+.better-drive-pdfview-hover-button:hover {
+    cursor: pointer;
+}
