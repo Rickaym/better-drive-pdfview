@@ -32,5 +32,9 @@ into the view for better and practical reading.
 5. Select the `dist` folder from the unzipped files when a folder selector window comes up
 6. Refresh the webpages & you're done!
 
+## How-To-Build
+
+Just do `npm run build` and webpack should take the job from then, all transpiled code goes into `dist/**` which is where the extension code & stuffs are.
+
 ## TODO:
 Using sided arrow keys (left & right) to skip whole pages
