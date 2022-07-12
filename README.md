@@ -23,14 +23,14 @@ into the view for better and practical reading.
 
 ## How-To-Install
 
-1. Clone or Download this repo into your local drive
+1. Clone or [Download](https://github.com/Rickaym/Better-Drive-PDFView/archive/refs/heads/master.zip) this repository & unzip it somewhere
 2. Go to `chrome://extensions/` in your chrome
 3. Enable Developer Mode<br>
 ![](https://raw.githubusercontent.com/Rickaym/Better-Drive-PDFView/master/assets/guide.png)
 
 4. Press `Load unpacked`
-5. Select the `dist` folder when a Folder Selector window comes up
-6. Done!
+5. Select the `dist` folder from the unzipped files when a folder selector window comes up
+6. Refresh the webpages & you're done!
 
 ## TODO:
 Using sided arrow keys (left & right) to skip whole pages
