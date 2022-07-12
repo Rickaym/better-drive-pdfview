@@ -7,7 +7,7 @@ It takes at least 6 seconds for the injection to finish/occur (should be around 
 ## How-To-Install
 
 1. Clone or [Download](https://github.com/Rickaym/Better-Drive-PDFView/archive/refs/heads/master.zip) this repository & unzip it somewhere
-2. Navigate to [chrome://extensions/](chrome://extensions/) in your Chrome Browser
+2. Navigate to `chrome://extensions/` in your Chrome Browser
 3. Enable Developer Mode<br>
 ![](https://raw.githubusercontent.com/Rickaym/Better-Drive-PDFView/master/assets/guide.png)
 
