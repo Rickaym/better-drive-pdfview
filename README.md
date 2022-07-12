@@ -2,6 +2,8 @@
 A neat lil extension to modify the default Google Drive PDF view UI for
 increased comment space & some other features.
 
+It takes at least 6 seconds for the injection to finish/occur (should be around the same time the PDF pages are loaded).
+
 ## Features
 
 1. "Goto" Feature to auto-scroll to selected pages<br>
